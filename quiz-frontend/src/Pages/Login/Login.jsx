@@ -30,7 +30,7 @@ const Login = () => {
 
           </div>
          <button type='submit'>CONTINUE</button>
-
+         <p>Forgot Password?</p>
          </div>
     </div>
   )
