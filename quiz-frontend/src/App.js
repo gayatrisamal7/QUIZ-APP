@@ -6,6 +6,7 @@ import Signup from './Pages/Signup/Signup.jsx';
 import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 import Navbar from './Components/Navbar/Navbar.jsx';
 import Footer from './Components/Footer/Footer.jsx';
+import Login from '../src/Pages/Login/Login.jsx'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quiz" element={<Dashboard/>}/>
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login/>}/>
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     
