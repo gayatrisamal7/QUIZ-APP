@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from '../Assets/Logo.jpeg';
+import new_quiz from '../Assets/new_quiz.jpeg';
+
 
 const Navbar = () => {
     const [menu,setMenu]=useState("HOME")
   return (
     <div className='navbar'> 
     <div className="nav-logo">
-      <img src={logo} alt=""/>
+     <Link to="/"> <img src={new_quiz} alt=""/></Link>
       <p>QUIZ</p>
     </div>
 
@@ -17,9 +18,13 @@ const Navbar = () => {
       <li onClick={()=>{setMenu("QUIZ")}}><Link style={{textDecoration:'none'}} to='/quiz'>QUIZ</Link> {menu === "QUIZ" ? <hr /> : <></>}</li>
       
       </ul>
-    <div className="nav-login-cart">
-    <Link to = '/signup'><button>LOGIN</button></Link>
-    
+    <div className="nav-right">
+      <div className="nav-right-signup">
+    <Link to = '/signup'><button>SIGNUP</button></Link>
+    </div>
+    <div className="nav-right-login">
+    <Link to = '/login'><button>LOGIN</button></Link>
+    </div>
       </div>
     </div>
   );

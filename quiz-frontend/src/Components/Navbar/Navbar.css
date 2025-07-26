@@ -15,7 +15,7 @@ font-size: 38px;
 font-weight: 600;
 }
 .nav-logo img {
-    width: 120px; /* Adjust the width as needed */
+    width: 150px; /* Adjust the width as needed */
     height: auto;
 }
 .nav-menu{
@@ -42,40 +42,33 @@ font-weight: 600;
     border-radius: 10px;
     background: #ff4141;
 }
-.nav-login-cart{
+.nav-right{
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 25px;
+  
 }
-
-
-.nav-login-cart button{
+.nav-right button{
     width: 157px;
     height: 58px;
     outline: none;
     border: 1px solid #7a7a7a;
     border-radius: 75px;
-    color: #515151;
+    color: white;
     font-size: 20px;
     font-weight: 500;
-    background: white;
+    background: rgba(255,76,76,1);
     cursor: pointer;
-}
-.nav-login-cart button:active{
-    background: #f3f3f3;
-}
-.nav-cart-count{
-    width: 22px;
-    height: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -35px;
-    margin-left: -55px;
-    border-radius: 11px;
-    font-size: 14px;
-    background: red;
-    color: white;
+    box-shadow: 
+    0 4px 0 #ffffff,     /* white layer (bottom-most) */
+    0 8px 0 #A08400;     /* mustard yellow bottom shadow */
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 
-  
+
+.nav-right button:active{
+    transform: translateY(4px);
+    box-shadow: 
+      0 2px 0 #ffffff, 
+      0 4px 0 #A08400;
+}
