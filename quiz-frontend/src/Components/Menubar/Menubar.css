@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #00243d; /* dark navy */
+    background-color: #8B0000; /* dark red */
     padding: 20px 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,26 +19,28 @@
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease, color 0.3s ease;
+    color: #FFB300;
   }
   
   /* Optional: icon styling if used */
   .nav-menu li i {
     font-size: 24px;
     margin-bottom: 5px;
-    color: #FFD700;
+    color: #FFB300;
   }
   
   /* Link styles */
   .nav-menu li a {
-    color: #FFD700;             /* gold/yellow */
+    color: #FFB300;             /* gold/yellow */
     text-decoration: none;      /* remove underline */
     font-weight: bold;
     font-size: 16px;
+    transition: transform 0.2s ease, color 0.3s ease;
   }
   
   /* Remove purple visited color */
   .nav-menu li a:visited {
-    color: #FFD700;
+    color: #FFB300;
   }
   
   /* Hover effect */
@@ -47,3 +49,18 @@
     transform: scale(1.1);
     color: #ffea00;
   }
+  
+  /* ACTIVE menu item styling */
+  .nav-menu li.active a {
+    background-color: #1c3b6d;    /* Highlight background */
+    color: #FFD700;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Optional: icon color inside active */
+  .nav-menu li.active i {
+    color: #FFD700;
+  }
+  

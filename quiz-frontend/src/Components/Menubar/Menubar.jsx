@@ -9,7 +9,7 @@ return (
 <div>
 <ul className="nav-menu">
      <li><Link to="/"> HOME </Link></li>
-     <li>QUIZ</li>
+     <li><Link to="/dashboard">QUIZ</Link></li>
      <li>LOG</li>
      <li>STATS</li>
      <li>PUB QUIZ</li>
