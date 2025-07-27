@@ -1,74 +1,50 @@
-.navbar{
+
+.navbar {
     display: flex;
     justify-content: space-between;
-    padding: 16px;
+    align-items: center;
+    padding: 0px 10px;
+    background-color: white;
     box-shadow: 0 1px 3px -2px black;
-}
-.nav-logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;      
-}
-.nav-logo p {
-color: #171717;
-font-size: 38px;
-font-weight: 600;
-}
-.nav-logo img {
-    width: 150px; /* Adjust the width as needed */
-    height: auto;
-}
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 50px;
-    color: #626262;
-    font-size: 20px;
-    font-weight: 500;
-}
-.nav-menu li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    cursor: pointer;
-}
-.nav-menu hr{
-    border: none;
-    width: 80%;
-    height: 3px;
-    border-radius: 10px;
-    background: #ff4141;
-}
-.nav-right{
-    display: flex;
-    align-items: center;
-    gap: 25px;
+    margin:0;
+    height:140px;
+    
+  }
+
+  .navbar-logo img {
+    height: 130px; /* or any smaller value like 30px */
+    width: auto;
+  }
   
-}
-.nav-right button{
-    width: 157px;
-    height: 58px;
-    outline: none;
-    border: 1px solid #7a7a7a;
-    border-radius: 75px;
-    color: white;
-    font-size: 20px;
+  .navbar-buttons {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .btn {
+    font-size: 26px;
     font-weight: 500;
-    background: rgba(255,76,76,1);
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
     cursor: pointer;
-    box-shadow: 
-    0 4px 0 #ffffff,     /* white layer (bottom-most) */
-    0 8px 0 #A08400;     /* mustard yellow bottom shadow */
-  transition: transform 0.1s, box-shadow 0.1s;
-}
-
-
-.nav-right button:active{
-    transform: translateY(4px);
-    box-shadow: 
-      0 2px 0 #ffffff, 
-      0 4px 0 #A08400;
-}
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    width: 160px; /* Set same width */
+    text-align: center;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .btn.dark {
+    background-color: #00253f;
+    color: #ffd900;
+  }
+  
+  .btn.yellow {
+    background-color: #ffd900;
+    color: black;
+  }
+  
