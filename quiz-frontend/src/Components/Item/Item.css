@@ -1,6 +1,14 @@
 .item-container {
     text-align: center;
-    margin: 3rem 0;
+  
+    background: linear-gradient(180deg, #f9cad3 0%, #e1ffea22 60%);
+    padding: 100px 80px;
+    margin: 0;
+  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    border-bottom:linear-gradient(180deg, #f9cad3 0%, #e1ffea22 60%);
   }
   
   .start-btn {
