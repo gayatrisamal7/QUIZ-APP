@@ -1,14 +1,14 @@
 .dashboard-wrapper {
   display: flex;
   height: 100vh;
-  background-color: #1a1a1d;
-  color: #f5f5f5;
+  background-color: #FFD700;
+  color:#FFD700;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .dashboard-sidebar {
   width: 250px;
-  background-color: #121214;
+  background-color:#1a1a1d;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -23,18 +23,18 @@
 
 .dashboard-sidebar a {
   display: block;
-  color: #ccc;
+  color:#FFD700;
   text-decoration: none;
   margin: 8px 0;
   font-size: 14px;
 }
 
 .dashboard-sidebar a:hover {
-  color: #fff;
+  color: #FFD700;
 }
 
 .dashboard-section-title {
-  color: #999;
+  color:#FFD700;
   font-size: 12px;
   margin-top: 20px;
   margin-bottom: 5px;
@@ -54,7 +54,7 @@
 
 .dashboard-main-content {
   flex: 1;
-  background-color: #2b2b2e;
+  background-color: #003865;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +64,7 @@
 .dashboard-main-title {
   font-size: 36px;
   margin-bottom: 40px;
-  color:white;
+  color: #FFD700;
 }
 
 .dashboard-card-container {
@@ -73,7 +73,7 @@
 }
 
 .dashboard-card {
-  background-color: #1a1a1d;
+  background-color: #FFD700;
   border: 1px solid #3d3d3d;
   border-radius: 16px;
   padding: 40px;
@@ -83,7 +83,7 @@
 }
 
 .dashboard-upload-label {
-  color: #f5f5f5;
+  color: black;
   font-size: 16px;
   cursor: pointer;
 }

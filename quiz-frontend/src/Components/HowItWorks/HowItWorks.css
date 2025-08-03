@@ -1,0 +1,40 @@
+.how-it-works {
+    background-color: #FFD700; /* Yellow background */
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color:black;
+    
+  }
+  
+  .how-it-works h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 205px
+  }
+  
+  .how-it-works h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 205px
+  }
+  
+  .how-it-works p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-left: 205px
+  }
+  
+  .how-it-works a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .how-it-works a:hover {
+    text-decoration: underline;
+  }
+  

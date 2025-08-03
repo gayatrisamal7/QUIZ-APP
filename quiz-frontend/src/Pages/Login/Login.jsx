@@ -8,30 +8,23 @@ const Login = () => {
 
 
   return (
-    <div className="login">
+    <div className="login-container">
+      <form className="login-form">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" />
 
-    <div className='logins_container'>
-         <h1>LOGIN</h1>
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" />
 
-     <div className="login-fields">
-        <input
-        type="email"
-        placeholder="Enter Your Email"
-        value={email}
-        onChange={(e)=>setEmail(e.target.value)}
-         />
+        <div className="remember-me">
+          <input type="checkbox" id="remember" />
+          <label htmlFor="remember">Remember me?</label>
+        </div>
 
-        <input
-        type="password"
-        placeholder="Enter Your Password"
-        value={password}
-        onChange={(e)=>setPassword(e.target.value)}
-         />
+        <button type="submit" className="login-btn">Login</button>
 
-          </div>
-         <button type='submit'>CONTINUE</button>
-         <p>Forgot Password?</p>
-         </div>
+        <a href="#" className="forgot-password">Forgot Password?</a>
+      </form>
     </div>
   )
 }
