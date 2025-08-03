@@ -8,6 +8,9 @@ import Navbar from './Components/Navbar/Navbar.jsx';
 import Login from '../src/Pages/Login/Login.jsx';
 import Menubar from './Components/Menubar/Menubar.jsx';
 import Home from '../src/Pages/Home/Home.jsx';
+import DevQuiz from './Pages/DevQuiz/DevQuiz.jsx';
+import QuizOptions from './Components/QuizOptions/QuizOptions.jsx';
+import DailyQuiz from './Pages/DailyQuiz/DailyQuiz.jsx';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/devquiz" element={<DevQuiz />} /> 
+        <Route path="quizoptions" element={<QuizOptions/>}/>
+        <Route path="/dailyquiz" element ={<DailyQuiz/>}/>
       </Routes>
       
  

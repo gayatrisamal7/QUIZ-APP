@@ -23,7 +23,7 @@ const Dashboard = () => {
     </aside>
 
     <main className="dashboard-main-content">
-      <h1 className="dashboard-main-title">CREATE A NEW QUIZ</h1>
+      <h1 className="dashboard-main-title">CREATE A NEW MCQ</h1>
       <div className="dashboard-card-container">
         <div className="dashboard-card">
           <label htmlFor="upload" className="dashboard-upload-label">Upload PDF</label>
