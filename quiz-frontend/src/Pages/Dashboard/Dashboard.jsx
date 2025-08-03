@@ -17,7 +17,7 @@ const Dashboard = () => {
         <span className="dashboard-loading">Loading...</span>
       </nav>
       <div className="dashboard-upgrade">
-        <p>Upgrade to SmartTalk-AI pro</p>
+       
         <small>Get unlimited access to all features</small>
       </div>
     </aside>

@@ -1,61 +1,63 @@
-.loginsignup{
-    width: 100%;
-    height: 100vh;
-    background: #fce3fc;
-    padding-top: 100px;
-}
-.loginsignup_container{
-    width: 580px;
-    height: 640px;
-    background: white;
-    margin: auto;
-    padding: 10px 60px;
-}
-.loginsignup-container h1{
-    margin: 20px 0px;
-}
-.loginsignup_fields{
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #082135; /* Dark blue only around form */
+    min-height: 100vh; /* fills full screen height */
+  }
+  
+  .register-form {
+    width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 29px;
-    margin-top: 30px;
-}
-.loginsignup_fields input{
-    height: 72px;
-    width: 100%;
-    padding-left: 20px;
-    border: 1px solid #c9c9c9;
-    outline: none;
-    color: #5c5c5c;
-    font-size: 18px;
-}
-.loginsignup_container button{
-    width: 605px;
-    height: 50px;
+    gap: 15px;
     color: white;
-    background: #ff4141;
-    margin-top: 30px;
-    border: none;
-    font-size: 24px;
-    font-weight: 500;
-    cursor: pointer;
-}
-.loginsignup-login{
-    margin-top: 20px;
-    color: #5c5c5c;
-    font-size: 18px;
-    font-weight: 500;
-}
-.loginsignup-login span{
-    color: #ff4141;
-    font-weight: 600;
-}
-.loginsignup-agree{
+  }
+  
+  .register-form label {
+    font-weight: bold;
+  }
+  
+  .register-form input,
+  .register-form select {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background: transparent;
+    color: white;
+  }
+  
+  .register-form input::placeholder {
+    color: #ccc;
+  }
+  
+  .checkbox-group {
     display: flex;
     align-items: center;
-    margin-top: 25px;
-    gap: 20px;
-    color: #5c5c5c;
-    font-size: 18px;
-    font-weight: 500;
-}
+    font-size: 14px;
+  }
+  
+  .checkbox-group input {
+    margin-right: 8px;
+  }
+  
+  .register-form a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .register-form button {
+    background-color: #ffd700; /* Yellow */
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .register-form button:hover {
+    background-color: #e6c200;
+  }
+  
