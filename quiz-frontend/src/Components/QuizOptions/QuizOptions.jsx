@@ -1,5 +1,6 @@
 import React from 'react'
 import './QuizOptions.css'
+import { Link } from 'react-router-dom'
 
 const QuizOptions = () => {
   return (
@@ -9,7 +10,7 @@ const QuizOptions = () => {
       <p className="quiz-description">
         Play the Daily Quiz, earn points and<br />compete for prizes
       </p>
-      <button className="quiz-button">🏆 PLAY!</button>
+      <Link to ="/dailyquiz"> <button className="quiz-button">🏆 PLAY!</button></Link>
     </div>
 
     <div className="quiz-section">

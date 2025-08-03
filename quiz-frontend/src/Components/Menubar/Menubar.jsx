@@ -9,10 +9,10 @@ return (
 <div>
 <ul className="nav-menu">
      <li><Link to="/"> HOME </Link></li>
-     <li><Link to="/dashboard">QUIZ</Link></li>
-     <li>LOG</li>
+     <li><Link to="/dashboard">MCQ</Link></li>
+     <li><Link to="/quizoptions">QUIZ</Link></li>
      <li>STATS</li>
-     <li>PUB QUIZ</li>
+      <li><Link to ="/devquiz">DEV QUIZ</Link></li>
 </ul>
 </div>
   )
