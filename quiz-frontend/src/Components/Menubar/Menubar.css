@@ -21,6 +21,14 @@
     transition: transform 0.2s ease, color 0.3s ease;
     color: #FFB300;
   }
+  /* Make the hr appear as an underline inside nav items */
+.nav-menu li hr {
+  width: 100%;                /* full width of menu item */
+  border: none;               /* remove default styling */
+  border-top: 3px solid #FFB300; /* gold underline */
+  margin: 5px 0 0 0;          /* little spacing from text */
+}
+
   
   /* Optional: icon styling if used */
   .nav-menu li i {

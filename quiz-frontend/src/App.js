@@ -11,6 +11,8 @@ import Home from '../src/Pages/Home/Home.jsx';
 import DevQuiz from './Pages/DevQuiz/DevQuiz.jsx';
 import QuizOptions from './Components/QuizOptions/QuizOptions.jsx';
 import DailyQuiz from './Pages/DailyQuiz/DailyQuiz.jsx';
+import QuizCategory from './Pages/QuizCategory/QuizCategory.jsx';
+import QuizResult from './Pages/QuizResult/QuizResult.jsx';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/devquiz" element={<DevQuiz />} /> 
         <Route path="quizoptions" element={<QuizOptions/>}/>
         <Route path="/dailyquiz" element ={<DailyQuiz/>}/>
+        <Route path="/quiz/:topic" element={<QuizCategory />} />
+        <Route path="/result" element={<QuizResult />} />
       </Routes>
       
  

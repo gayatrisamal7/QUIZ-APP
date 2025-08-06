@@ -1,8 +1,10 @@
 import React from 'react'
 import './DevQuiz.css'
+import { useNavigate } from "react-router-dom";
 
 const DevQuiz = () => {
     const topics = ["Java", "JavaScript", "Python", "MySQL", "PostgreSQL", "React"];
+    const navigate = useNavigate();
   return (
     <div>
          <div className="devquiz-container">
@@ -11,7 +13,8 @@ const DevQuiz = () => {
         {topics.map((topic, index) => (
           <div key={index} className="quiz-card">
             <h2>{topic}</h2>
-            <button className="start-btn">Start Quiz</button>
+            <button className="start-btn"
+            onClick={() => navigate(`/quiz/${topic}`)}>Start Quiz</button>
           </div>
         ))}
       </div>
