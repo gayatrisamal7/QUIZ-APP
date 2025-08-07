@@ -1,40 +1,39 @@
 .how-it-works {
-    background-color: #FFD700; /* Yellow background */
-    padding: 40px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color:black;
-    
-  }
-  
-  .how-it-works h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-left: 205px
-  }
-  
-  .how-it-works h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    margin-left: 205px
-  }
-  
-  .how-it-works p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    margin-left: 205px
-  }
-  
-  .how-it-works a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .how-it-works a:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #FFD700; /* Yellow background */
+  padding: 60px 40px;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  color: black;
+}
+
+.how-it-works h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-left: 205px;
+}
+
+.how-it-works h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  margin-left: 205px;
+}
+
+.how-it-works p {
+  font-size: 20px;         /* 🔼 Increased font size */
+  margin-bottom: 20px;
+  margin-left: 205px;
+  max-width: 800px;        /* Optional: limits line length for better readability */
+}
+
+.how-it-works a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.how-it-works a:hover {
+  text-decoration: underline;
+}

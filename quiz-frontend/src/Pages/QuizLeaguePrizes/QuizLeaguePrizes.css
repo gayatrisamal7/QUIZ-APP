@@ -1,0 +1,52 @@
+.quiz-leagues {
+    background-color: #2c2560; /* 🎨 Purple-blue background like 2nd image */
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    min-height: 100vh;
+  }
+  
+  .quiz-card {
+    background-color: #f0eaea; /* light box background */
+    padding: 30px 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .quiz-card h2 {
+    color: #1a1a1a;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .quiz-card p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* 🎯 New Button Style like the red-pink one */
+  .view-prizes-btn {
+    display: inline-block;
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* red to pink */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .view-prizes-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
