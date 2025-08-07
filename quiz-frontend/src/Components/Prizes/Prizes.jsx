@@ -1,6 +1,8 @@
 import React from 'react'
 import'./Prizes.css'
 import trophyImage from '../Assets/image_tropy.png'
+import { Link } from 'react-router-dom'
+
 
 const Prizes = () => {
   return (
@@ -12,7 +14,7 @@ const Prizes = () => {
       </div>
 
       <div className="prizes-content">
-        <h2>Prizes</h2>
+       <h2>Prizes</h2>
         <p>Your points are added to our Leaderboard.</p>
         <p>
           In the event of a tie, the system will calculate which tied user has
@@ -20,7 +22,7 @@ const Prizes = () => {
         </p>
         <p>
           At the end of the month or week{' '}
-          <span className="highlight">prizes</span> will be awarded.
+          <span className="highlight"><Link to="/quizprizes">prizes</Link></span> will be awarded.
         </p>
       </div>
     </section>

@@ -13,6 +13,7 @@ import QuizOptions from './Components/QuizOptions/QuizOptions.jsx';
 import DailyQuiz from './Pages/DailyQuiz/DailyQuiz.jsx';
 import QuizCategory from './Pages/QuizCategory/QuizCategory.jsx';
 import QuizResult from './Pages/QuizResult/QuizResult.jsx';
+import QuizLeaguePrizes from './Pages/QuizLeaguePrizes/QuizLeaguePrizes.jsx';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/dailyquiz" element ={<DailyQuiz/>}/>
         <Route path="/quiz/:topic" element={<QuizCategory />} />
         <Route path="/result" element={<QuizResult />} />
+        <Route path="/quizprizes" element={<QuizLeaguePrizes />} />
       </Routes>
       
  
