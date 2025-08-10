@@ -1,78 +1,92 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    background-color: #082135; /* Dark blue only around form */
-    min-height: 100vh; /* fills full screen height */
-  }
-  
-  .register-form {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    color: white;
-  }
-  
-  .register-form label {
-    font-weight: bold;
-  }
-  
-  .register-form input,
-  .register-form select {
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 4px;
-   
-    color: white;
-  }
-  
-  .register-form input::placeholder {
-    color:black;
-  }
-  .register-form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;  /* Light background so options are visible */
-    color: #000;             /* Black text */
-    outline: none;
-    font-weight: normal;
-  }
-  
-  .register-form select option {
-    background-color: #fff;  /* Option background */
-    color: #000;             /* Option text color */
-  }
-  
-  
-  .checkbox-group {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-  }
-  
-  .checkbox-group input {
-    margin-right: 8px;
-  }
-  
-  .register-form a {
-    color: white;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-  
-  .register-form button {
-    background-color: #ffd700; /* Yellow */
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .register-form button:hover {
-    background-color: #e6c200;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #082135; /* Dark blue only around form */
+  min-height: 100vh; /* fills full screen height */
+}
+
+/* wrapper div */
+.register-form {
+  width: 400px;
+  color: white;
+}
+
+/* make the inner form the flex column with gaps */
+.register-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-form label {
+  font-weight: bold;
+}
+
+.register-form input,
+.register-form select {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color:black;
+}
+
+.register-form input::placeholder {
+  color: black;
+}
+
+/* refine select visuals */
+.register-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;  /* Light background so options are visible */
+  color: #000;             /* Black text */
+  outline: none;
+  font-weight: normal;
+}
+
+.register-form select option {
+  background-color: #fff;  /* Option background */
+  color: #000;             /* Option text color */
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.checkbox-group input {
+  margin-right: 8px;
+}
+
+.register-form a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.register-form button {
+  background-color: #ffd700; /* Yellow */
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-form button:hover {
+  background-color: #e6c200;
+}
+
+/* Optional: if you added a heading like <h1 className="form-title"> */
+.form-title {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+ 
