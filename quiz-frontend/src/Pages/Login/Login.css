@@ -23,8 +23,10 @@
   .login-form input[type="password"] {
     padding: 10px;
     border: 1px solid #ccc;
+    color: white;
     border-radius: 5px;
     outline: none;
+    background:"transparent";
   }
   
   .remember-me {
@@ -39,7 +41,7 @@
   
   .login-btn {
     background-color: #FFD700; /* Yellow */
-    color: #fff;
+    color:black;
     font-weight: bold;
     border: none;
     padding: 12px;

@@ -8,17 +8,20 @@ const Signup = () => {
   return (
     <div className="form-container">
     <form className="register-form">
-      <label>Email</label>
-      <input type="email" name="email" />
 
-      <label>Username</label>
-      <input type="text" name="username" />
+    <label>Username</label>
+    <input type="text" placeholder="Enter Your Name" name="username" />
+
+      <label>Email</label>
+      <input type="email" placeholder="Enter Your Mail" name="email" />
+
+   
 
       <label>Password</label>
-      <input type="password" name="password" />
+      <input type="password"  placeholder="Enter Your Password" name="password" />
 
       <label>Confirm Password</label>
-      <input type="password" name="confirmPassword" />
+      <input type="password" placeholder="Confirm Your Password" name="confirmPassword" />
 
       <label>Select your favourite venue (optional)</label>
       <select name="venue">

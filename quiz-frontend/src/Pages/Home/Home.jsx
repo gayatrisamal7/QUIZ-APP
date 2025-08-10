@@ -14,8 +14,6 @@ const Home = () => {
     <div>
       <QuizOptions/>
       <HowItWorks/>
-      
-     
       <Prizes/>
       <Offers/>
       <Footer/>

@@ -1,14 +1,14 @@
 import React from 'react'
 import'./Prizes.css'
-import trophyImage from '../Assets/image_tropy.png'
 import { Link } from 'react-router-dom'
+import trophy_image from '../Assets/image_trophy.jpeg'
 
 
 const Prizes = () => {
   return (
     <section className="prizes-section">
       <div className="prizes-image-container">
-        <img src={trophyImage} alt="Trophy" className="trophy-image" />
+        <img src={trophy_image} alt="Trophy" className="trophy-image" />
         <div className="yellow-circle large"></div>
         <div className="yellow-circle small"></div>
       </div>

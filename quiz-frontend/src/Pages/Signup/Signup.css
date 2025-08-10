@@ -24,13 +24,28 @@
     padding: 10px;
     border: 1px solid white;
     border-radius: 4px;
-    background: transparent;
+   
     color: white;
   }
   
   .register-form input::placeholder {
-    color: #ccc;
+    color:black;
   }
+  .register-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;  /* Light background so options are visible */
+    color: #000;             /* Black text */
+    outline: none;
+    font-weight: normal;
+  }
+  
+  .register-form select option {
+    background-color: #fff;  /* Option background */
+    color: #000;             /* Option text color */
+  }
+  
   
   .checkbox-group {
     display: flex;

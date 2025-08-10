@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import all_quiz from "../../Components/Assets/All_quiz";
+import QuizContextProvider, { QuizContext } from "../../Context/QuizContext" // <-- use context
 import "./QuizCategory.css";
 
-const QuizCategory = () => {
+const QuizCategory = (props) => {
   const { topic } = useParams();
   const navigate = useNavigate();
+  const { all_quiz } = useContext(QuizContext); // <-- read from provider
+
   const [page, setPage] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
@@ -58,7 +60,7 @@ const QuizCategory = () => {
         const selected = selectedAnswers[questionIndex];
 
         return (
-          <div key={index} className="quiz-category-question">
+          <div key={questionIndex} className="quiz-category-question">
             <p>{questionIndex + 1}. {q.question}</p>
             <div className="quiz-category-options">
               {q.options.map((opt, i) => (
