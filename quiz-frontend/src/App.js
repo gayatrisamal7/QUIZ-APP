@@ -14,6 +14,7 @@ import DailyQuiz from './Pages/DailyQuiz/DailyQuiz.jsx';
 import QuizCategory from './Pages/QuizCategory/QuizCategory.jsx';
 import QuizResult from './Pages/QuizResult/QuizResult.jsx';
 import QuizLeaguePrizes from './Pages/QuizLeaguePrizes/QuizLeaguePrizes.jsx';
+import GetStarted from './Pages/GetStarted/GetStarted.jsx';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/quiz/:topic" element={<QuizCategory />} />
         <Route path="/result" element={<QuizResult />} />
         <Route path="/quizprizes" element={<QuizLeaguePrizes />} />
+        <Route path="/get-started" element={<GetStarted />} />
       </Routes>
       
  

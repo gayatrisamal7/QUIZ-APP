@@ -1,8 +1,16 @@
 // src/Pages/Signup/Signup.jsx
 import React, { useState } from "react";
 import "./Signup.css";
-
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  setPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence,
+  GoogleAuthProvider,
+  signInWithPopup,
+  fetchSignInMethodsForEmail,
+} from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 
 const Signup = () => {
@@ -10,38 +18,117 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [acceptTos, setAcceptTos] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  const normalize = (s) => s?.trim() ?? "";
+
+  // --- Email/Password Sign Up (auto signs in) ---
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return;
 
-    // clear any previous messages
     setError("");
     setSuccess("");
 
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
+    if (!acceptTos) return setError("Please accept privacy policy and terms.");
+    if (password !== confirmPassword) return setError("Passwords do not match.");
+    if (password.length < 6) return setError("Password must be at least 6 characters.");
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
-      console.log(user);
-      console.log("User Registered Successfully");
+      setLoading(true);
 
-      // show success in UI
-      setSuccess("User Registered Successfully ✅");
+      await setPersistence(
+        auth,
+        rememberMe ? browserLocalPersistence : browserSessionPersistence
+      );
 
-      // optionally clear the form or navigate
+      const cred = await createUserWithEmailAndPassword(
+        auth,
+        normalize(email),
+        password
+      );
+
+      const name = normalize(userName);
+      if (name) await updateProfile(cred.user, { displayName: name });
+
+      setSuccess("User Registered & Signed In ✅");
+
+      // reset form
       setUserName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      setAcceptTos(false);
+      setRememberMe(false);
     } catch (err) {
       console.error(err);
-      setError(err.message); // e.g., auth/email-already-in-use
+      // friendlier messages
+      const map = {
+        "auth/email-already-in-use": "That email is already registered.",
+        "auth/invalid-email": "Please enter a valid email.",
+        "auth/weak-password": "Password is too weak.",
+      };
+      setError(map[err?.code] || err?.message || "Failed to register.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // --- Google Sign-In (popup only) ---
+  const handleGoogleSignIn = async () => {
+    if (loading) return;
+
+    setError("");
+    setSuccess("");
+
+    // optional: enforce TOS also for Google
+    if (!acceptTos) return setError("Please accept privacy policy and terms.");
+
+    try {
+      setLoading(true);
+
+      await setPersistence(
+        auth,
+        rememberMe ? browserLocalPersistence : browserSessionPersistence
+      );
+
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });
+
+      const result = await signInWithPopup(auth, provider);
+      setSuccess("Signed in with Google ✅");
+      // result.user available here
+    } catch (err) {
+      console.error(err);
+
+      // Handle common edge case: account exists with different provider
+      if (err?.code === "auth/account-exists-with-different-credential" && err?.customData?.email) {
+        try {
+          const methods = await fetchSignInMethodsForEmail(auth, err.customData.email);
+          setError(
+            `This email is already linked to: ${methods.join(", ")}. ` +
+            `Sign in using that method, then link Google from your profile.`
+          );
+          return;
+        } catch (_) {
+          // fall through to default
+        }
+      }
+
+      const map = {
+        "auth/popup-blocked": "Popup was blocked. Allow popups and try again.",
+        "auth/popup-closed-by-user": "Popup closed before completing sign-in.",
+        "auth/cancelled-popup-request": "Another sign-in is already in progress.",
+        "auth/unauthorized-domain": "Domain is not authorized in Firebase.",
+      };
+      setError(map[err?.code] || err?.message || "Google sign-in failed.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -55,6 +142,7 @@ const Signup = () => {
             placeholder="Enter Your Name"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
+            disabled={loading}
           />
 
           <label>Email</label>
@@ -64,6 +152,7 @@ const Signup = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={loading}
           />
 
           <label>Password</label>
@@ -73,6 +162,7 @@ const Signup = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            disabled={loading}
           />
 
           <label>Confirm Password</label>
@@ -82,33 +172,54 @@ const Signup = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
+            disabled={loading}
           />
 
           <div className="checkbox-group">
             <label>
-              <input type="checkbox" /> Accept{" "}
-              <a href="#">privacy policy</a>, and{" "}
+              <input
+                type="checkbox"
+                checked={acceptTos}
+                onChange={(e) => setAcceptTos(e.target.checked)}
+                disabled={loading}
+              />{" "}
+              Accept <a href="#">privacy policy</a>, and{" "}
               <a href="#">terms and conditions</a>
             </label>
           </div>
 
           <div className="checkbox-group">
             <label>
-              <input type="checkbox" /> Receive email updates about live quizzes
-              and other events?
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+                disabled={loading}
+              />{" "}
+              Remember me?
             </label>
           </div>
 
-          <div className="checkbox-group">
-            <label>
-              <input type="checkbox" /> Remember me?
-            </label>
-          </div>
+          <button type="submit" disabled={loading}>
+            {loading ? "Processing..." : "Register & Login"}
+          </button>
 
-          <button type="submit">Register &amp; Login</button>
+          <div style={{ margin: "12px 0", textAlign: "center" }}>— or —</div>
 
-          {error && <p style={{ color: "red" }}>{error}</p>}
-          {success && <p style={{ color: "white" }}>{success}</p>}
+          <button
+            type="button"
+            onClick={handleGoogleSignIn}
+            disabled={loading}
+            className="google-btn"
+            aria-label="Sign in with Google"
+          >
+            {loading ? "Please wait..." : "Continue with Google"}
+          </button>
+
+          <p aria-live="polite">
+            {error && <span style={{ color: "red" }}>{error}</span>}
+            {success && <span style={{ color: "white" }}>{success}</span>}
+          </p>
         </form>
       </div>
     </div>
@@ -116,4 +227,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
 

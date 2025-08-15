@@ -1,0 +1,77 @@
+/* src/Pages/GetStarted/GetStarted.css */
+
+/* deep gradient page background (not white) */
+.getstarted-container {
+    min-height: calc(100vh - 140px);
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 3vw, 3rem);
+    background:
+      radial-gradient(900px 500px at 10% -10%, rgba(255,255,255,0.06), transparent 60%),
+      radial-gradient(700px 350px at 110% 0%, rgba(255,255,255,0.05), transparent 60%),
+      linear-gradient(135deg, #0f172a 0%, #102444 35%, #0a3a5a 65%, #0e7490 100%);
+  }
+  
+  /* WHITE card */
+  .getstarted-card {
+    width: min(560px, 92vw);
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    border-radius: 18px;
+    text-align: center;
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 18px 40px rgba(2, 8, 23, 0.35);
+  }
+  
+  .getstarted-card h1 {
+    margin: 0 0 .5rem;
+    font-size: clamp(1.3rem, 2.4vw, 2rem);
+    line-height: 1.2;
+    color: #0b1324;
+    font-weight: 800;
+  }
+  
+  .getstarted-card p {
+    margin: 0 0 1rem;
+    color: #475569;
+  }
+  
+  /* buttons area */
+  .getstarted-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Make the buttons look like your "Start Quiz" gradient */
+  .getstarted-buttons .btn,
+  .getstarted-buttons .btn.yellow,
+  .getstarted-buttons .btn.dark {
+    border: 0;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.9rem 1.6rem;
+    border-radius: 12px;
+    cursor: pointer;
+    background-image: linear-gradient(135deg, #ff6a00 0%, #ff2d73 100%);
+    box-shadow: 0 8px 0 rgba(0,0,0,0.15);
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  
+  .getstarted-buttons .btn:hover,
+  .getstarted-buttons .btn.yellow:hover,
+  .getstarted-buttons .btn.dark:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.03);
+  }
+  
+  .getstarted-buttons .btn:active,
+  .getstarted-buttons .btn.yellow:active,
+  .getstarted-buttons .btn.dark:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.18);
+  }
+  
